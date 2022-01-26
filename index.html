@@ -11,12 +11,11 @@
 </head>
 <body>
     <!--Navigation-->
-
     <nav class="bg-white shadow dark:bg-gray-800">
         <div class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300">
             <a href="#" class="text-gray-800 transition-colors duration-200 transform dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6">Home</a>
 
-            <a href="#" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-200 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Add Book</a>
+            <!-- <a href="#" id="$id('modal-title')" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-200 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Add Book</a> -->
 
             <a href="#" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-200 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">Show Books</a>
 
@@ -24,17 +23,15 @@
 
         </div>
     </nav>
-<div x-data="{ open: false }"> 
-    <div class="w-full bg-center bg-cover h-[32rem]" style="background-image: url(https://images.unsplash.com/photo-1612477954469-c6a60de89802?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
-        <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
-            <div class="text-center">
-                <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">Save your <span class="text-blue-400 underline">books</span></h1>
-                <button x-on:click="open = true" type="button" class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Add Book</button>
+    <div x-data="{ open: false }"> 
+        <div class="w-full bg-center bg-cover h-[32rem]" style="background-image: url(https://images.unsplash.com/photo-1612477954469-c6a60de89802?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+            <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
+                <div class="text-center">
+                    <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">Save your <span class="text-blue-400 underline">books</span></h1>
+                    <button x-on:click="open = true" type="button" class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Add Book</button>
+                </div>
             </div>
         </div>
-    </div>
-
-
     <!-- Modal -->
     <div
         x-show="open"
@@ -85,18 +82,18 @@
                             <div>
                                 <label class="text-gray-700 dark:text-gray-200" for="bookRead">Read already?</label>
                                 <!-- <input id="bookRead" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"> -->
-                                <label id="bookRead" >
-                                    <select  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                <label  >
+                                    <select id="bookRead" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                                       <option value="">---</option>
-                                      <option value="">Yes</option>
-                                      <option value="">No</option>
+                                      <option value="Yes">Yes</option>
+                                      <option value="No">No</option>
                                     </select>
                                   </label>
                             </div>
                         </div>
             
                         <div class="flex justify-end mt-6">
-                            <button class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+                            <button id="receiveSubmits" onclick="addBookToLibrary()" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
                         </div>
                     </form>
                 </section>
@@ -106,14 +103,18 @@
                         Confirm
                     </button> -->
                     <button type="button" x-on:click="open = false" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
-                        Cancel
+                        Close
                     </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    
-<script src="/library.js"></script>
+
+
+
+
+
+<script src="/library/library.js"></script>
 </body>
 </html>
