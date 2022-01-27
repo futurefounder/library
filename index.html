@@ -95,7 +95,7 @@
                         </div>
             
                         <div class="flex justify-end mt-6">
-                            <button onclick="addBookToLibrary();clickSwal()" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+                            <button onclick="addBookToLibrary();clickSwal();return false" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
                         </div>
                     </form>
                 </section>
@@ -112,11 +112,42 @@
         </div>
     </div>
 </div>
-<div id="showTitle"></div>
-<div id="showAuthor"></div>
+<!-- <div id="showTitle"></div> -->
+<div ></div>
 
 
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="mb-10 border-t border-b divide-y">
+      <div class="grid py-8 sm:grid-cols-4">
+        <div class="mb-4 sm:mb-0">
+          <div class="space-y-1 text-xs font-semibold tracking-wide uppercase">
+            <a href="/" 
+            class="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800" 
+            aria-label="Category">Pages</a>
+            <p id="showPages" class="text-gray-600"></p>
+          </div>
+        </div>
+        <div class="sm:col-span-3 lg:col-span-2">
+          <div class="mb-3">
+            <a href="/" aria-label="Article" class="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700">
+              <!-- Book Title -->
+              <p id="showTitle" class="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
+              </p>
+            </a>
+          </div>
+          <!-- Book Author -->
+          <p  id="showAuthor" class="text-gray-700">
+          </p>
+          <br>
+          <button   id="showRead" 
+                    class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">
+                    </button>
+        </div>
+      </div>
 
+    </div>
+
+  </div>
 
 
 

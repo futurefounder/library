@@ -3,22 +3,27 @@ let myLibrary = [
         title:  'The Hobbit',
         author: 'J.R.R. Tolkien',
         pages:  295,
-        read:   'not read yet' 
+        read:   false 
     }, 
     {
         title:  'Zen Tales',
         author: 'Alan Watts',
         pages:  199,
-        read:   'Read' 
+        read:  true 
     }];
 
-let showTitle = document.getElementById("showTitle").innerHTML = JSON.stringify(myLibrary[0].title);
-let showAuthor = document.getElementById("showAuthor").innerHTML = JSON.stringify(myLibrary[0].author);
-// let html = document.getElementById("showBooks").innerHTML = JSON.stringify(myLibrary[0].pages);
-// let html = document.getElementById("showBooks").innerHTML = JSON.stringify(myLibrary[0].read);
+    for (i = 0 ; i < myLibrary.length; i++) { 
 
+let showTitle = document.getElementById("showTitle").innerHTML =    JSON.stringify(myLibrary[i].title);
+let showAuthor = document.getElementById("showAuthor").innerHTML =  JSON.stringify(myLibrary[i].author);
+let showPages = document.getElementById("showPages").innerHTML =    JSON.stringify(myLibrary[i].pages);
+let showRead = document.getElementById("showRead").innerHTML =      JSON.stringify(myLibrary[i].read);
+    }
 
-
+let bookTitle   = document.getElementById('bookTitle').value;
+let bookAuthor  = document.getElementById('bookAuthor').value;
+let bookPages   = document.getElementById('bookPages').value;
+let bookRead    = document.getElementById('bookRead').value;
 
 function Book(title, author, pages, read) {
     this.title  = title
@@ -27,20 +32,21 @@ function Book(title, author, pages, read) {
     this.read   = read
 }
 
-function addBookToLibrary(book) {
-
-    let bookTitle   = document.getElementById('bookTitle').value;
-    let bookAuthor  = document.getElementById('bookAuthor').value;
-    let bookPages   = document.getElementById('bookPages').value;
-    let bookRead    = document.getElementById('bookRead').value;
+function addBookToLibrary() {
     
-    const userInput = new Book(bookTitle, bookAuthor, bookPages, bookRead);
-    const updatedLibrary = myLibrary.push(userInput)
+    let userInput = new Book(bookTitle, bookAuthor, bookPages, bookRead);
+    let updatedLibrary = myLibrary.push(userInput)
 
-    let showTitle = document.getElementById("showTitle").innerHTML = JSON.stringify(myLibrary);
-
-    console.log(userInput)
+    for (i =0 ; i < myLibrary.length; i++) { 
+   
+    let showTitle   = document.getElementById("showTitle").innerHTML    =   JSON.stringify(myLibrary[i].title);
+    let showAuthor  = document.getElementById("showAuthor").innerHTML   =   JSON.stringify(myLibrary[i].author);
+    let showPages   = document.getElementById("showPages").innerHTML    =   JSON.stringify(myLibrary[i].pages);
+    let showRead    = document.getElementById("showRead").innerHTML     =   JSON.stringify(myLibrary[i].read);
+}
+    console.log(myLibrary)
   }
+  console.log(myLibrary)
 
   function clickSwal() {
     swal({
