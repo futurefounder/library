@@ -95,7 +95,7 @@
                         </div>
             
                         <div class="flex justify-end mt-6">
-                            <button onclick="addBookToLibrary();clickSwal();return false" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+                            <button onclick="addBookToLibrary();return false" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
                         </div>
                     </form>
                 </section>
@@ -139,9 +139,9 @@
           <p  id="showAuthor" class="text-gray-700">
           </p>
           <br>
-          <button   id="showRead" 
-                    class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">
-                    </button>
+          Reading status:
+          <span   id="showRead" 
+            class="text-gray-700"> </span>
         </div>
       </div>
 
