@@ -14,13 +14,19 @@ let myLibrary = [
     
 
 
-
+// Constructor function for making book objects
 function Book(title, author, pages, read) {
     this.title  = title
     this.author = author
     this.pages  = pages
     this.read   = read
+    this.info = function() {
+        return(title + ", by " + author + pages + "pages, " + "read?:" + read);
+    }
+    console.log(this.info());
 }
+
+const theHobbit = new Book("Hobbit", "JRR", 288, "No")
 
 function addBookToLibrary() {
     
@@ -37,22 +43,32 @@ function addBookToLibrary() {
     console.log(myLibrary)
 }
 
+function hide(id) {
+	document.getElementById(id).style.display = "none";
+}
+function show(id) {
+	document.getElementById(id).style.display = "";
+}
+
 function displayLibrary() {
 
     for (i = 0; i < myLibrary.length; i++) {
         let li = document.createElement("li");
-        let showTitle = document.createTextNode("Title:" + myLibrary[i].title + "\n");
-        let showAuthor = document.createTextNode("Author:" + myLibrary[i].author + "\n");
-        let showPages = document.createTextNode("Pages:" + myLibrary[i].pages + "\n");
-        let showRead   = document.createTextNode("Read:" + myLibrary[i].read + "\n");
+        let showTitle = document.createTextNode("Title:" + myLibrary[i].title + "\n\n");
+        let showAuthor = document.createTextNode("Author:" + myLibrary[i].author + "\n\n");
+        let showPages = document.createTextNode("Pages:" + myLibrary[i].pages + "\n\n");
+        let showRead   = document.createTextNode("Read:" + myLibrary[i].read + "\n\n");
+        let removeBook   = document.createTextNode("❌");
 
 
         li.appendChild(showTitle);
         li.appendChild(showAuthor);
         li.appendChild(showPages);
         li.appendChild(showRead);
+        li.appendChild(removeBook);
 
         document.getElementById("myUl").appendChild(li);
+
       }
 
 }
